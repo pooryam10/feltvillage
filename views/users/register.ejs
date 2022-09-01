@@ -1,0 +1,59 @@
+<%- include("../includes/header.ejs") %> 
+    <div class="form-parent d-flex justify-content-center align-content-center align-items-center ">
+        <div class="from-container bg-white shadow col-md-4 col-sm-7 col-9 pt-5">
+            <%- include("../messages/registerErr.ejs") %> 
+            <form method="post" action="/users/register" class="">
+                <div class="d-flex justify-content-between px-2 pt-2">
+                    <div>
+                        <h5>ثبت نام در سایت</h5>
+                    </div>
+                    <div>
+                        <a href="/"><h6>خانه <i class="fa fa-home"></i></h6></a>
+                    </div>
+                </div>
+                <!-- <h4 class="text-center">ثبت نام در سایت</h4> -->
+                <div class="text-center pt-2">
+                    <img src="/img/signup-icon.png" class="img-fluid w-25" alt="">
+                </div>
+                <div class="mt-5 px-3">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" name="fullname" class="commen-input form-control" placeholder="نام کامل شما ...">
+                </div>
+                <div class=" px-3">
+                    <i class="fa fa-envelope-o icon"></i>
+                    <input type="text" name="email" class="commen-input form-control" placeholder="آدرس ایمیل ...">
+                </div>
+                <div class=" px-3">
+                    <i class="fa fa-phone icon"></i>
+                    <input type="text" name="phoneNumber" class="commen-input form-control" placeholder="شماره تماس ...">
+                </div>
+                <div class="px-3">
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" name="password" class="commen-input form-control" placeholder="رمز عبور ...">
+                </div>
+                <div class="px-3">
+                    <i class="fa fa-repeat icon"></i>
+                    <input type="password" name="confirmPassword" class="commen-input form-control" placeholder="تکرار رمز عبور ...">
+                </div>
+                <div class="form-group mt-3 d-flex justify-content-center">
+                    <div
+                        class="g-recaptcha"
+                        data-sitekey="6LclV3IhAAAAAJXPqY-cgoSLiHduv6Fic2ByGDJg"
+                    ></div>
+                </div>
+                <div class="mt-4 px-3">
+                    <button type="submit" class="btn btn-success btn-block">ثبت نام</button>
+                </div>
+                <div class="mt-4 pb-4 px-3 d-flex justify-content-between">
+                    <div>
+                        <input type="checkbox" class="form-check-inline form-checkbox">
+                        مرا به خاطر بسپار.
+                    </div>
+                    <div>
+                        <a href="/users/login">قبلا ثبت نام کرده ام.</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<%- include("../includes/footer.ejs") %> 

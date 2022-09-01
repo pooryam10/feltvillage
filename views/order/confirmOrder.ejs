@@ -1,0 +1,24 @@
+<%- include("../includes/header.ejs") %>
+
+    <section class="container d-flex justify-content-center align-content-center align-items-center" style="height: 100vh;">
+        <div class=" w-50 alert-secondary">
+            <div class="alert alert-info">
+                <h4>کد تایید برای شما  فرستاده شد.</h4>
+                <div class="alert alert-danger">
+                    اشتباه وارد کردن کد تایید باعث از دست رفتن مراحل انجام شد می شود.
+                    پس خواهش مند است با دقت وارد شود.
+                </div>
+            </div>
+            <form action="/order/confirm-order" method="post">
+                <div class="form-group col-12">
+                    <h5>کد تایید را وارد کنید:</h5>
+                    <input type="number" class="form-control" name="confirm" required>
+                </div>
+
+
+                <button type="submit" class="btn btn-block btn-success">تایید</button>
+            </form>
+        </div>
+    </section>
+
+<%- include("../includes/footer.ejs") %>

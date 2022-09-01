@@ -1,0 +1,47 @@
+<div class="slider1-parent container mt-5 d-none d-md-block">
+    <div class="col-12 mb-4">
+        <h3 class="mb-3 d-inline product-title">محبوب ترین محصولات</h3>
+    </div>
+    <div class="slider3" style=" width: 100%;">
+        <% for( let i = 0; i < popularProducts.length; i++ ) { %>
+            <div class="col-md-4 mb-3">
+                <div class="card shadow">
+                    <img class="img-fluid" alt="100%x280"
+                        src="/uploads/pictures/<%= popularProducts[i].picture %> ">
+                    <div class="card-body">
+                        <h4 class="card-title text-center"><%= popularProducts[i].name %> </h4>
+                        <p class="card-text text-center text-success"><%= popularProducts[i].price %>  تومان</p>
+                        <a class="btn btn-success d-block" href="/products/single-product/<%= popularProducts[i].id %>" role="button"><i class="fa fa-cart-plus"
+                                aria-hidden="true"></i> خرید</a>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+
+    </div>
+</div>
+
+ <!--? more popularity products mobile start -->
+ <div class="slider1-parent container mt-5 d-block d-md-none">
+    <div class="col-12 mb-4">
+        <h3 class="mb-3 d-inline product-title">محبوب ترین محصولات</h3>
+    </div>
+    <div class="row">
+        <% for( let i = 0; i < popularProducts.length; i++ ) { %>
+            <div class="col-12 col-sm-6 mb-3">
+                <div class="card shadow">
+                    <img class="img-fluid" alt="100%x280"
+                        src="/uploads/pictures/<%= popularProducts[i].picture %> ">
+                    <div class="card-body">
+                        <h4 class="card-title text-center"><%= popularProducts[i].name %> </h4>
+                        <p class="card-text text-center text-success"><%= popularProducts[i].price %>  تومان</p>
+                        <a class="btn btn-success d-block" href="/products/single-product/<%= popularProducts[i].id %>" role="button"><i class="fa fa-cart-plus"
+                                aria-hidden="true"></i> خرید</a>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+
+    </div>
+</div>
+<!--? more popularity products mobile end -->

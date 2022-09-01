@@ -1,0 +1,120 @@
+<h3 class="mt-2 text-center text-white">Edit Product: </h3>
+<div class="w-50 mx-auto">
+    <!-- validation was here -->
+</div>
+<div class="d-flex align-items-center justify-content-center">
+    <form action="/dashboard/edit-product/<%= product.id %> " class="w-50 text-white" method="POST" enctype="multipart/form-data">
+        <%- include("../messages/errMessages.ejs") %> 
+        <%- include("../messages/dashSuccessFlash.ejs") %> 
+        <div class="d-md-flex">
+            <div class="form-group col-md-6 col-12" style="margin-right: 30px;">
+                <label for="title">Name Of Product: </label>
+                <input
+                    type="text"
+                    value="<%= product.name %> "
+                    class="form-control"
+                    name="name"
+                    id="title"
+                />
+            </div>
+    
+            <div class="form-group col-md-6 col-12">
+                <label for="title">Price: </label>
+                <input
+                    type="number"
+                    class="form-control"
+                    name="price"
+                    id="title"
+                />
+                <p>Last Price <%= product.price %></p>
+            </div>
+        </div>
+
+        <div class="d-flex">
+            <div class="form-group col-md-4 col-8" style="margin-right: 30px;">
+                <label for="status">Status</label>
+                <select name="status" class="form-control custom-select" id="status">
+                    <option value="public" selected>Public</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+    
+            <div class="form-group col-md-4 col-8">
+                <label for="status">Popularity</label>
+                <select name="popularity" class="form-control custom-select" id="status">
+                    <option value="false" selected>No</option>
+                    <option value="true">Yes</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="d-flex">
+            <div class="form-group col-6" style="margin-right: 30px;">
+                <label for="title">Size: </label>
+                <input
+                    type="number"
+                    class="form-control"
+                    name="size"
+                    id="title"
+                />
+                <p>Last size <%= product.size %> </p>
+            </div>
+    
+            <div class="form-group col-6">
+                <label for="title">Color: </label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="color"
+                    value="<%= product.color %> "
+                    id="title"
+                />
+            </div>
+        </div>
+
+        <div class="d-flex flex-wrap">
+            <div>
+                <label for="selectedThumbnail">Picture:</label>
+                <div class=" mb-3">
+                    <input
+                        type="file"
+                        class="custom-file-input"
+                        name="picture"
+                        id="selectedThumbnail"
+                        aria-describedby="inputGroupFileAddon03"
+                    />
+                </div>
+            </div>
+
+            <div class="form-group col-md-4 col-8" style="margin-right: 30px;">
+                <label for="status">Kind:</label>
+                <select name="kind" class="form-control custom-select" id="status">
+                    <option value="نمدی1" selected>نمدی1</option>
+                    <option value="نمدی2">نمدی2</option>
+                    <option value="نمدی3">نمدی3</option>
+                </select>
+            </div>
+            
+            <div class="form-group col-md-4" style="margin-right: 30px;">
+                <label for="title">Discount: </label>
+                <input
+                    type="number"
+                    class="form-control"
+                    name="discount"
+                    id="title"
+                />
+                <p>Last Discount <%= product.discount %> </p>
+            </div>
+        </div>
+
+        <div class="form-group col-12">
+            <h5>Caption</h5>
+            <textarea name="explain" class="form-control" id="caption"><%= product.explain %> </textarea>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Create Post" class="btn btn-success m-2" />
+            <a href="/dashboard" class="btn btn-warning m-2">Decline</a>
+        </div>
+    </form>
+</div>

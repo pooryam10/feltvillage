@@ -1,0 +1,115 @@
+<%- include("./includes/header.ejs") %>
+    <%- include("./index/mainHeader.ejs") %>
+
+        <main>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-muted text-decoration-none t"></a></li>
+                    <li class="breadcrumb-item"><a href="/" class="text-muted text-decoration-none t">خانه</a></li>
+                    <li class="breadcrumb-item"><a href="/products/<%= product.kind %> " class="text-muted text-decoration-none t">عروسک</a></li>
+                    <li class="breadcrumb-item actived" aria-current="page"><%= product.name %> </li>
+                </ol>
+                <%- include("./messages/successFlash.ejs") %> 
+                <%- include("./messages/errFlash.ejs") %> 
+            </nav>
+            <section class="info-section">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-md-4 product-image">
+                            <img src="/uploads/pictures/<%= product.picture %> " class="img-fluid" alt="...">
+                            <!-- <img src="/img/monitor2.jpg" class="img-fluid" alt="..."> -->
+                        </div>
+                        <div class="col-12 col-md-5 pb-5 pb-md-0 product-introduction">
+                            <h4 class="text-nowrap font-weight-bold"><%= product.name %> </h4>
+
+                                <h5 class="mt-5 text-nowrap font-weight-bold">ویژگی‌ها</h5>
+                                <ul class="specifications mt-4 text-nowrap">
+                                    <li class="text-secondary">اندازه :
+                                        <span class="specifications-color font-weight-bold">
+                                            <% if (product.size) { %>
+                                                <%= product.size %> سانتی متر 
+                                            <% } else { %>
+                                                ---
+                                            <% } %> 
+                                        </span>
+                                    </li>
+                                    <li class="text-secondary mt-3">رنگ :
+                                        <span class="specifications-color font-weight-bold">
+                                            <% if (product.color) { %>
+                                                <%= product.color %> 
+                                            <% } else { %>
+                                                ---
+                                            <% } %> 
+                                        </span>
+                                    </li>
+                                </ul>
+                                <h5 class="mt-5 text-nowrap font-weight-bold">توضیحات:</h5>
+                                <p class="text-secondary pb-4">
+                                    <%= product.explain %> 
+                                </p>
+                        </div>
+
+                        <div class="col-3 d-none d-xl-block">
+                            <div class="card buy-box rounded">
+                                <div class="card-body">
+                                    <h5 class="card-title text-right">فروشنده</h5>
+                                    <span class="text-muted mr-3">نمدیجات مهسا</span>
+                                    <p class="h6 mt-3 mr-3 border-bottom pb-3">عملکرد <span
+                                            class="h6 text-success">عالی</span></p>
+                                    <p class="warranty border-bottom pb-3"> <img src="/img/warranty-10277.svg"
+                                            alt="" class="warranty-logo" width="20px"> گارانتی ۳۶ ماهه همگام (پردازشگر ستاره خاور)
+                                    </p>
+                                    <p class="border-bottom pb-3"><i class="fas fa-store"></i> موجود در انبار</p>
+
+                                    <h5 class="text-left">
+                                        <% if (product.discount !== 0) { %>
+                                            <span class=""><del class="h6 mr-5 text-secondary ml-2"><%= product.price %> 
+                                                    تومان</del>
+                                                <span class="badge badge-danger badge-pill mb-1"><i class="fa fa-percent"></i><%= product.discount %> </span>
+                                            </span>
+                                        <% } %>
+                                        <p class="card-text text-left text-black font-weight-bold mt-2 mb-3"><%= product.realPrice %> 
+                                            تومان
+                                        </p>
+                                    </h5>
+                                    <a class="btn btn-danger d-block" href="/basket/add-basket/<%= product.id %> " role="button"><i class="fa fa-cart-plus"
+                                            aria-hidden="true"></i>
+                                        افزودن به سبد خرید</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="d-xl-none d-block fixed-bottom bg-white d-flex justify-content-between align-content-center " style="border-top: 0.5px solid rgb(190, 185, 185);">
+                            <div class="buy mt-3">
+                                <a class="btn btn-danger mb-3 mr-3 w-auto" href="/basket/add-basket/<%= product.id %> " role="button"><i
+                                        class="fa fa-cart-plus" aria-hidden="true"></i>
+                                    افزودن به سبد خرید</a>
+                            </div>
+                            <div class="price ml-3">
+                                <h5 class="text-left">
+                                    <% if (product.discount !== 0) { %>
+                                        <span class=""><del class="h6 mr-5 text-secondary ml-2"><%= product.price %> 
+                                                تومان</del>
+                                            <span class="badge badge-danger badge-pill mb-1"><i class="fa fa-percent"></i><%= product.discount %> </span>
+                                        </span>
+                                    <% } %>
+                                    
+                                    <% if (product.discount !== 0) { %>
+                                        <p class="card-text text-left text-black font-weight-bold"><%= product.realPrice %>  تومان
+                                        </p>
+                                    <% } else { %>
+                                        <p class="card-text mt-4 text-left text-black font-weight-bold"><%= product.realPrice %>  تومان
+                                        </p>
+                                    <% } %> 
+
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+
+        <%- include("./includes/footer.ejs") %>

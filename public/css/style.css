@@ -1,0 +1,30 @@
+
+.form-parent {
+    height: 100vh;
+    border-radius: 10px;
+}
+
+.commen-input {
+    height: 45px;
+    padding-right: 40px;
+}
+
+.icon {
+    color: gray;
+    position: relative;
+    font-size: 20px;
+    top: 35px;
+    right: 10px;
+}
+
+.dash-active {
+    border-bottom: 4px solid pink;
+}
+
+.dash-back-icon {
+    font-size: 30px;
+}
+
+.dash-card-date {
+    color: rgb(133, 133, 133);
+}

@@ -1,0 +1,56 @@
+<%- include("./includes/header.ejs") %>
+
+    <%- include("./index/mainHeader.ejs") %> 
+
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <% for( let i = 0; i < products.length; i++ ) { %>
+                <% if (products[i].discount === 0) { %>
+                    <div class="col-md-4 mb-3">
+                        <div class="card shadow">
+                            <img class="img-fluid" alt="100%x280"
+                                src="/uploads/pictures/<%= products[i].picture %> ">
+                            <div class="card-body">
+                                <h4 class="card-title text-center"><%= products[i].name %> </h4>
+                                <p class="card-text text-center text-success"><%= products[i].price %> تومان </p>
+                                <a class="btn btn-success d-block" href="/products/single-product/<%= products[i].id %> " role="button"><i class="fa fa-cart-plus"
+                                        aria-hidden="true"></i> خرید</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <div class="col-12 col-md-4 col-sm-6 mb-3">
+                        <div class="card shadow">
+                            <img class="img-fluid" alt="100%x280" src="/uploads/pictures/<%= products[i].picture %> ">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text text-success text-center"><%= products[i].realPrice %>  تومان
+                                    </p>
+                                    <h4 class="card-title text-center"><%= products[i].name %> </h4>
+                                </div>
+                                <h4><span class="badge badge-danger badge-pill mb-1"><%= products[i].discount %> %</span>
+                                    <span class=""><del class="h6 mr-5 text-secondary"><%= products[i].price %> 
+                                            تومان</del>
+                                    </span>
+                                </h4>
+                                <a class="btn btn-success d-block" href="/products/single-product/<%= products[i].id %> " role="button"><i class="fa fa-cart-plus"
+                                        aria-hidden="true"></i>
+                                    خرید</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %> 
+            <% } %>
+
+        </div>
+
+        <div class="mt-4 text-center d-flex justify-content-center">
+            <div class="">
+                <%- include("./includes/pagination.ejs") %> 
+            </div>
+        </div>
+    </div>
+
+    <%- include("./includes/footer.ejs") %>

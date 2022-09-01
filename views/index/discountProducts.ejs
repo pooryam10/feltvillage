@@ -1,0 +1,41 @@
+<!--* discount products start -->
+<section class="discount-products bg-danger mt-4">
+    <div class="col-6">
+        <img src="/img/special_title_box.png" class="img-fluid w-50 mb-2 ml-5 offer-image"
+            alt="incredible-offer">
+    </div>
+
+    <% if (discountProducts.length < 4) { %>
+        <div class="text-center text-white text-bold">
+            <p>هنوز پیشنهادی وجود ادارد.</p>
+        </div>
+    <% } else { %>
+        <div class="slider2 row col-md-11 col-9 col-sm-11 mx-auto">
+                <% for( let i = 0; i < discountProducts.length; i++ ) { %>
+                <!--! card start -->
+                <div class="col-md-3 mb-3">
+                    <div class="card">
+                        <img class=" discount-product-img" alt="100%x280" src="/uploads/pictures/<%= discountProducts[i].picture %> ">
+                        <div class="card-body">
+                            <h4 class="card-title text-center"><%= discountProducts[i].name %> </h4>
+                            <p class="card-text text-success text-center"><%= discountProducts[i].realPrice %>  تومان
+                            </p>
+                            <h4><span class="badge badge-danger badge-pill mb-1"><%= discountProducts[i].discount %> %</span>
+                                <span class=""><del class="h6 mr-5 text-secondary"><%= discountProducts[i].price %> 
+                                        تومان</del>
+                                </span>
+                            </h4>
+                            <a class="btn btn-success d-block" href="/products/single-product/<%= discountProducts[i].id %> " role="button"><i class="fa fa-cart-plus"
+                                    aria-hidden="true"></i>
+                                خرید</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <% } %>
+            </div>
+    <% } %> 
+
+
+</section>
+<!--* discount products end -->

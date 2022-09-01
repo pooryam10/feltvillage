@@ -1,0 +1,92 @@
+<div class="slider1-parent container mt-5 d-none d-md-block">
+    <div class="col-12 mb-4">
+        <h3 class="mb-3 d-inline product-title">جدیدترین محصولات</h3>
+    </div>
+    <div class="poorya" style=" width: 100%;">
+        <% for( let i = 0; i < recentProducts.length; i++ ) { %>
+            <% if (recentProducts[i].discount === 0) { %>
+                <div class="col-md-4 mb-3">
+                    <div class="card shadow">
+                        <img class="img-fluid" alt="100%x280"
+                            src="/uploads/pictures/<%= recentProducts[i].picture %> ">
+                        <div class="card-body">
+                            <h4 class="card-title text-center"><%= recentProducts[i].name %> </h4>
+                            <p class="card-text text-center text-success"><%= recentProducts[i].price %> تومان </p>
+                            <a class="btn btn-success d-block" href="/products/single-product/<%= recentProducts[i].id %>" role="button"><i class="fa fa-cart-plus"
+                                    aria-hidden="true"></i> خرید</a>
+                        </div>
+                    </div>
+                </div>
+            <% } else { %>
+            <div class="col-md-4 mb-3">
+                <div class="card shadow">
+                    <img class="img-fluid" alt="100%x280" src="/uploads/pictures/<%= recentProducts[i].picture %> ">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text text-success text-center"><%= recentProducts[i].realPrice %>  تومان
+                            </p>
+                            <h4 class="card-title text-center"><%= recentProducts[i].name %> </h4>
+                        </div>
+                        <h4><span class="badge badge-danger badge-pill mb-1"><%= recentProducts[i].discount %> %</span>
+                            <span class=""><del class="h6 mr-5 text-secondary"><%= recentProducts[i].price %> 
+                                    تومان</del>
+                            </span>
+                        </h4>
+                        <a class="btn btn-success d-block" href="/products/single-product/<%= recentProducts[i].id %>" role="button"><i class="fa fa-cart-plus"
+                                aria-hidden="true"></i>
+                            خرید</a>
+                    </div>
+                </div>
+            </div>
+        <% } %> 
+    <% } %> 
+
+    </div>
+</div>
+
+
+<!--? recent products mobile start -->
+<div class="slider1-parent container mt-5 d-block d-md-none">
+    <div class="col-12 mb-4">
+        <h3 class="mb-3 d-inline product-title">جدید ترین محصولات</h3>
+    </div>
+    <div class="row">
+        <% for( let i = 0; i < recentProducts.length; i++ ) { %>
+            <% if (recentProducts[i].discount === 0) { %>
+                <div class="col-12 col-sm-6 mb-3">
+                    <div class="card shadow">
+                        <img class="img-fluid"
+                            src="/uploads/pictures/<%= recentProducts[i].picture %> ">
+                        <div class="card-body">
+                            <h4 class="card-title text-center"><%= recentProducts[i].name %> </h4>
+                            <p class="card-text text-center text-success"><%= recentProducts[i].price %>  تومان</p>
+                            <a class="btn btn-success d-block" href="#" role="button"><i class="fa fa-cart-plus"
+                                    aria-hidden="true"></i> خرید</a>
+                        </div>
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="col-12 col-sm-6 mb-3" style="direction: ltr;">
+                    <div class="card shadow">
+                        <img class="img-fluid" alt="100%x280" src="/uploads/pictures/<%= recentProducts[i].picture %> ">
+                        <div class="card-body">
+                            <h4 class="card-title text-center"><%= recentProducts[i].name %> </h4>
+                            <p class="card-text text-success text-center"><%= recentProducts[i].realPrice %>  تومان
+                            </p>
+                            <h4><span class="badge badge-danger badge-pill mb-1"><%= recentProducts[i].discount %> %</span>
+                                <span class=""><del class="h6 mr-5 text-secondary pr-5"><%= recentProducts[i].price %> 
+                                        تومان</del>
+                                </span>
+                            </h4>
+                            <a class="btn btn-success d-block" href="#" role="button"><i class="fa fa-cart-plus"
+                                    aria-hidden="true"></i>
+                                خرید</a>
+                        </div>
+                    </div>
+                </div>
+            <% } %> 
+        <% } %>
+
+    </div>
+</div>
+<!--? recent products mobile end -->

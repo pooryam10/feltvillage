@@ -1,0 +1,202 @@
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/vazir.eot');
+    src: url('../fonts/vazir?#iefix') format('embedded-opentype'),
+        url('../fonts/vazir.woff2') format('woff2'),
+        url('../fonts/vazir.woff') format('woff'),
+        url('../fonts/vazir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Vazir;
+    direction: rtl;
+    text-align: right;
+}
+
+.follow-us {
+    background-color: #EBF7FA;
+}
+
+.instagram-logo {
+    font-size: 20px;
+}
+
+.instagram-logo:hover {
+    color: #FF1493;
+}
+
+.search {
+    background-color: #FFB6C1;
+}
+
+.actived {
+    border-radius: 3px;
+    color: #FF1493 !important;
+}
+
+.home:after,
+.category:after,
+.about-us:after,
+.contact-us:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px #FF1493;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.home:hover:after,
+.category:hover:after,
+.about-us:hover:after,
+.contact-us:hover:after {
+    transform: scaleX(1);
+}
+
+.login:hover,
+.register:hover,
+.category:hover,
+.about-us:hover,
+.contact-us:hover,
+.sidepanel-category:hover,
+.sidepanel-aboutus:hover,
+.sidepanel-contactus:hover {
+    color: #FF1493 !important;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.product-title {
+    border-bottom: solid 2px #FF1493;
+}
+
+/* The sidepanel menu */
+.sidepanel {
+    height: 100vh;
+    /* Specify a height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    right: 0;
+    /* background: url('../img/1.jpg') no-repeat center center / cover; */
+    background-color: #EBF7FA;
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidepanel */
+}
+
+.sidepanel-image {
+    width: 200px;
+    border-radius: 80px;
+}
+
+/* .sidepanel-inner {
+    background-color: rgba(40, 39, 39, 0.789);
+    height: 90vh;
+  } */
+
+/* The sidepanel links */
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    display: block;
+    transition: 0.2s;
+}
+
+
+
+.hover-burger-menu:hover {
+    border-right: 4px solid #FF1493;
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: all .2s;
+}
+
+.openbtn:hover {
+    border: 1px solid #FF1493;
+    background-color: #FF1493;
+    color: white;
+}
+
+/* medium - display 2  */
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(50%);
+
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-50%);
+
+    }
+}
+
+/* large - display 3 */
+@media (min-width: 992px) {
+
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(33%);
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-33%);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-inner .carousel-item>div {
+        display: none;
+    }
+
+    .carousel-inner .carousel-item>div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left {
+    transform: translateX(0);
+}

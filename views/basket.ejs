@@ -1,0 +1,77 @@
+<%- include("./includes/header.ejs") %>
+
+    <%- include("./index/mainHeader.ejs") %>
+
+        <section class="info-section mt-4">
+            <div class="container">
+                <%- include("./messages/errFlash.ejs") %> 
+                <%- include("./messages/successFlash.ejs") %> 
+                <div class="row">
+                    <div class="col-12 col-lg-8 product-introduction card rounded">
+                        <p class="shopping-card mt-2">سبد خرید شما</p>
+                        <p class="product-quantity">
+                            <%= basketNumber %> کالا
+                        </p>
+
+                        <% for( let i=0; i < products.length; i++ ) { %>
+                            <div class="d-flex align-items-center border-bottom">
+                                <div>
+                                    <img src="/uploads/pictures/<%= products[i].picture %> " class="img-fluid image-card"
+                                        alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="text-nowrap card-title title mb-2" style="font-size: 20px;"><%= products[i].name %> </h1>
+                                    <div class="d-flex align-items-center card-text">
+                                        <p class="card-color"><%= products[i].color %> </p>
+                                    </div>
+                                    <p class="warranty-text mt-2 card-text "> <img src="/img/warranty-10277.svg" alt=""
+                                            class="warranty-icon"> گارانتی ۳۶ ماهه همگام (پردازشگر ستاره خاور)
+                                    </p>
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-text text-right text-black text-danger"><%= products[i].realPrice %> 
+                                            تومان
+                                        </h5>
+                                        <div>
+                                            <a href="/basket/remove-product/<%= products[i].id %> " class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+
+                    </div>
+
+                    <div class="col-lg-4 d-none d-lg-block">
+                        <div class="card buy-box rounded">
+                            <div class="d-flex align-items-center justify-content-between mx-4 my-4">
+                                <span class="total-card text-nowrap">جمع سبد خرید</span>
+                                <h5 class="price card-text font-weight-bold text-nowrap"><%= totalPrice %> 
+                                    تومان
+                                </h5>
+                            </div>
+                            <p class="shipping-cost mx-4 my-3 text-justify">هزینه ارسال براساس آدرس، زمان تحویل، وزن و
+                                حجم مرسوله شما محاسبه می‌شود</p>
+
+                            <div class="card-body">
+                                <a class="btn btn-info d-block" href="/order/get-address" role="button">ادامه</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="d-lg-none d-block fixed-bottom bg-white d-flex justify-content-between align-items-center border-top">
+
+                        <div class="buy mt-3">
+                            <a class="btn btn-info mb-3 mr-3 w-auto" href="/order/get-address" role="button">ادامه</a>
+                        </div>
+                        <div class="ml-3 text-left">
+                            <span class="total-card-shopping">جمع سبد خرید</span>
+                            <p class="card-text text-left text-black font-weight-bold"><%= totalPrice %>  تومان
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <%- include("./includes/footer.ejs") %>

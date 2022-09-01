@@ -1,0 +1,38 @@
+@font-face {
+    font-family: "BYekan";
+    src: url("../fonts/BYekan-webfont.eot") format("eot"),
+        url("../fonts/BYekan-webfont.woff") format("woff"),
+        url("../fonts/BYekan-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "BYekan" !important;
+}
+
+/* @font-face {
+    font-family: Vazir;
+    src: url('../fonts/vazir.eot');
+    src: url('../fonts/vazir?#iefix') format('embedded-opentype'),
+        url('../fonts/vazir.woff2') format('woff2'),
+        url('../fonts/vazir.woff') format('woff'),
+        url('../fonts/vazir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "Vazir" !important;
+} */
+
+.second-body {
+    width: 100%;
+    background: url('../img/pattern.png') repeat center center;
+    position: relative;
+}
+
+.header-logo {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: 900;
+}

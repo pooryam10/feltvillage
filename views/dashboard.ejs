@@ -1,0 +1,22 @@
+<%- include("./admin/adminHeader.ejs") %>
+    <div class="min-height-300 bg-primary position-absolute w-100">
+    <!--* Sidebar  -->
+    <%- include("./admin/dashSidebar.ejs") %>
+
+    <main class="main-content position-relative border-radius-lg ">
+        <!--* Top Nav -->
+        <%- include("./admin/dashTopNav.ejs") %>
+
+        <!--* Dashboard Routing -->
+        <% if (path === "/dashboard") { %>
+            <%- include("./admin/mainDash.ejs") %> 
+        <% } else if (path === "/add-product") { %>
+            <%- include("./admin/dashAddProduct.ejs") %> 
+        <% } else if (path === "/edit-product") { %>
+            <%- include("./admin/dashEditProduct.ejs") %> 
+         <% } %>  
+
+    </main>
+
+    <%- include("./admin/dashExtra.ejs") %> 
+<%- include("./admin/adminFooter.ejs") %>

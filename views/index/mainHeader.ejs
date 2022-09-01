@@ -1,0 +1,94 @@
+<header class="header">
+    <div class="follow-us d-flex justify-content-between align-items-center align-middle pt-1">
+        <div class="mr-3">
+            <h6>ما را در اینستاگرام دنبال کنید : <a class="text-reset" href="https://www.instagram.com/felt.village"
+                    target="_blank"><i class="instagram-logo fa fa-instagram fa-xl"></i></a></h2>
+        </div>
+        <p class="support pt-1 ml-3">
+            پشتیبانی : ۰۹۳۰۱۳۸۱۰۲۸
+        </p>
+    </div>
+    <div class="bottom-header d-flex justify-content-between mt-1 border-bottom p-3">
+        <a href="#" class="navbar-brand text-reset ml-4">نمدیجات مهسا</a>
+        <div class="d-flex justify-content-around mt-2 ml-4">
+            <a href="/basket" class="text-reset login-text"><span class="badge badge-pill badge-danger basket-number"><%= basketNumber %> </span>
+                <i class="fa fa-shopping-cart fa-xl" aria-hidden="true"></i>
+            </a>
+            <div class="mr-3">
+                <% if (userName) { %>
+                    <a href="/users/profile" class="login text-reset login-text">
+                        <span><i class="fa fa-user"></i></span>
+                        <span><%= userName %> </span>
+                    </a>
+                <% } else { %>
+                    <a href="/users/login" class="login text-reset login-text">ورود</a>
+                    <p class="d-inline">/</p>
+                    <a href="/users/register" class="register text-reset login-text">ثبت نام</a>
+                    </nav>
+                <% } %> 
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav class="navbar bg-white navbar-light navbar-expand-sm d-sm-none d-sm-block sticky-top">
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="NavigationBar">
+        <div id="mySidepanel" class="sidepanel">
+            <div class="sidepanel-inner">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <img src="/img/2.jpg" class="mr-5 mb-4 sidepanel-image" alt="...">
+                <form action="#" class="form-inline">
+                    <div class="input-group">
+                        <div class="input-group-append">
+                            <button class="btn btn-sm btn-primary rounded-right" type="submit"><i
+                                    class="fa fa-search"></i></button>
+                        </div>
+                        <input type="text" class="form-control form-control-sm text-right rounded-left"
+                            placeholder="جستجو">
+                    </div>
+                </form>
+                <a href="/" class="actived hover-hamber-menu mt-2"><i class="fa fa-home"></i> خانه</a>
+                <div class="btn-group dropdown dropleft">
+                    <a href="#" class="hover-burger-menu sidepanel-category">دسته‌بندی</a>
+                    <div class="dropdown-menu text-right">
+                        <a class="dropdown-item" href="/products/<%= 'نمدی1' %> ">نمدی1</a>
+                        <a class="dropdown-item" href="/products/<%= 'نمدی2' %>">نمدی2</a>
+                        <a class="dropdown-item" href="/products/<%= 'نمدی3' %>">نمدی3</a>
+                    </div>
+                </div>
+                <a href="#" class="hover-burger-menu sidepanel-aboutus">درباره ما</a>
+                <a href="#" class="hover-burger-menu sidepanel-contactus">تماس با ما</a>
+            </div>
+        </div>
+        <button class="openbtn d-block d-sm-none" onclick="openNav()">&#9776;</button>
+        <!--! button is here -->
+        <!-- <div class="navbar-nav d-md-none">
+            <span class="navbar-toggler-icon"></span>
+        </div> -->
+        <div class="d-sm-block d-none">
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link <%= path === '/' ? 'actived' : '' %>  home"><i class="fa fa-home"></i> خانه</a>
+                <div class="btn-group dropdown">
+                    <a href="#" class="nav-item nav-link category  <%= path === '/products' ? 'actived' : '' %> " data-toggle="dropdown">دسته‌بندی</a>
+                    <div class="dropdown-menu text-right">
+                        <a class="dropdown-item" href="/products/<%= 'نمدی1' %> ">نمدی1</a>
+                        <a class="dropdown-item" href="/products/<%= 'نمدی2' %>">نمدی2</a>
+                        <a class="dropdown-item" href="/products/<%= 'نمدی3' %>">نمدی3</a>
+                    </div>
+                </div>
+                <a class="nav-item nav-link about-us" href="./AboutUs.html">درباره ما</a>
+                <a class="nav-item nav-link contact-us" href="./ContactUs.html">تماس با ما</a>
+            </div>
+        </div>
+        <form action="#" class="form-inline d-none d-sm-block">
+            <div class="input-group">
+                <div class="input-group-append">
+                    <button class="btn btn-primary rounded-right" type="submit"><i
+                            class="fa fa-search"></i></button>
+                </div>
+                <input type="text" class="form-control text-right rounded-left" placeholder="جستجو">
+            </div>
+        </form>
+    </div>
+</nav>
+<!-- Sliders -->

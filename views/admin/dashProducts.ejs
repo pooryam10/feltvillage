@@ -1,0 +1,89 @@
+<%- include("../includes/header.ejs") %> 
+
+<div class="d-flex justify-content-end mr-5 mt-1 dash-back-icon">
+    <a href="/dashboard" class="text-reset"><i class="fa fa-arrow-left"></i></a>
+</div>
+
+<div class="haeder d-flex w-100 justify-content-center mt-1">
+    <div class="mr-4 <%= kind === 'نمدی1' ? 'dash-active' : '' %> ">
+        <a href="/dashboard/show-products/<%= 'نمدی1' %> " class="text-reset">نمدی 1</a>
+    </div>
+    <div class="mr-4 <%= kind === 'نمدی2' ? 'dash-active' : '' %>">
+        <a href="/dashboard/show-products/<%= 'نمدی2' %> " class="text-reset">نمدی 2</a>
+    </div>
+    <div class="mr-4 <%= kind === 'نمدی3' ? 'dash-active' : '' %>">
+        <a href="/dashboard/show-products/<%= 'نمدی3' %> " class="text-reset">نمدی 3</a>
+    </div>
+</div>  
+
+<div class="w-50 mx-auto mt-2">
+    <%- include("../messages/successFlash.ejs") %> 
+</div>
+
+<hr>
+
+<div class="container">
+    <div class="row">
+        <% for( let i = 0; i < products.length; i++ ) { %>
+            <% if (products[i].discount === 0) { %>
+                <div class="col-12 col-md-4 col-sm-6 mb-3">
+                    <div class="card shadow">
+                        <img class="img-fluid" alt="100%x280" style="max-height: 300px;"
+                            src="/uploads/pictures/<%= products[i].picture %> ">
+                        <div class="card-body pt-4 pb-5 d-flex justify-content-between">
+                            <h4 class="card-title"><%= products[i].name %> </h4>
+                            <p class="card-text"><%= products[i].price %> <span>تومان</span> </p>
+                        </div>
+                        <div class="card-footer pt-3 d-flex justify-content-between">
+                            <div>
+                                <a href="/dashboard/delete-product/<%= products[i].id %> " class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                <a href="/products/single-product/<%= products[i].id %>" class="btn btn-success"><i class="fa fa-eye"></i></a>
+                                <a href="/dashboard/edit-product/<%= products[i].id %> " class="btn btn-info"><i class="fa fa-pencil"></i></a>
+                            </div>
+                            <div>
+                                <p class="dash-card-date"><%= formatDate(products[i].createdAt) %> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="col-12 col-md-4 col-sm-6 mb-3">
+                    <div class="card shadow">
+                        <img class="img-fluid" alt="100%x280" src="/uploads/pictures/<%= products[i].picture %> ">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <p class="card-text text-success text-center"><%= products[i].realPrice %>  تومان
+                                </p>
+                                <h4 class="card-title text-center"><%= products[i].name %> </h4>
+                            </div>
+                            <h4><span class="badge badge-danger badge-pill mb-1"><%= products[i].discount %> %</span>
+                                <span class=""><del class="h6 mr-5 text-secondary"><%= products[i].price %> 
+                                        تومان</del>
+                                </span>
+                            </h4>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <div>
+                                <a href="/dashboard/delete-product/<%= products[i].id %> " class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                <a href="/products/single-product/<%= products[i].id %>" class="btn btn-success"><i class="fa fa-eye"></i></a>
+                                <a href="/dashboard/edit-product/<%= products[i].id %> " class="btn btn-info"><i class="fa fa-pencil"></i></a>
+                            </div>
+                            <div>
+                                <p class="dash-card-date"><%= formatDate(products[i].createdAt) %> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %> 
+        <% } %>
+
+    </div>
+
+    <div class="mt-4 text-center d-flex justify-content-center">
+        <div class="">
+            <%- include("../includes/pagination.ejs") %> 
+        </div>
+    </div>
+</div>
+
+<%- include("../includes/footer.ejs") %> 

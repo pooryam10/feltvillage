@@ -1,0 +1,31 @@
+<%- include("../includes/header.ejs") %>
+
+    <section class="container d-flex justify-content-center align-content-center align-items-center" style="height: 100vh;">
+        <div class=" w-50 alert-secondary">
+            <%- include("../messages/errFlash.ejs") %>
+            <%- include("../messages/orderErr.ejs") %> 
+            <div class="alert alert-info">
+                <h3 class="">توجه</h3>
+                <p>لطفا آدرس دقیق خود را وارد کنید.</p>
+                <p>ایمیل تایید سفارش بلافاصله پس از فشردن گرینه تایید برای شما ارسال می گردد.
+            پس از تایید سفارش در اسرع وقت با شما تماس گرفته خواهد شد.</p>
+            </div>
+            <form action="/order/get-address" method="post">
+                <div class="form-group col-12">
+                    <h5>آدرس دقیق شما:</h5>
+                    <textarea name="address" class="form-control" id="caption"></textarea>
+                </div>
+
+                <div class=" mt-3 mr-4">
+                    <div
+                        class="g-recaptcha"
+                        data-sitekey="6LclV3IhAAAAAJXPqY-cgoSLiHduv6Fic2ByGDJg"
+                    ></div>
+                </div>
+
+                <button type="submit" class="btn btn-block btn-success">تایید آدرس</button>
+            </form>
+        </div>
+    </section>
+
+<%- include("../includes/footer.ejs") %>

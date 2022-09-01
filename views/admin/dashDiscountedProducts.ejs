@@ -1,0 +1,66 @@
+<%- include("../includes/header.ejs") %>
+
+    <div class="d-flex justify-content-end mr-5 mt-1 dash-back-icon">
+        <a href="/dashboard" class="text-reset"><i class="fa fa-arrow-left"></i></a>
+    </div>
+
+
+    <div class="w-50 mx-auto mt-2">
+        <%- include("../messages/successFlash.ejs") %>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <% for( let i=0; i < products.length; i++ ) { %>
+                <div class="col-12 col-md-4 col-sm-6 mb-3">
+                    <div class="card shadow">
+                        <img class="img-fluid" alt="100%x280" src="/uploads/pictures/<%= products[i].picture %> ">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <p class="card-text text-success text-center">
+                                    <%= products[i].realPrice %> تومان
+                                </p>
+                                <h4 class="card-title text-center">
+                                    <%= products[i].name %>
+                                </h4>
+                            </div>
+                            <h4><span class="badge badge-danger badge-pill mb-1">
+                                    <%= products[i].discount %> %
+                                </span>
+                                <span class=""><del class="h6 mr-5 text-secondary">
+                                        <%= products[i].price %>
+                                            تومان
+                                    </del>
+                                </span>
+                            </h4>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <div>
+                                <a href="/dashboard/delete-product/<%= products[i].id %> " class="btn btn-danger"><i
+                                        class="fa fa-trash"></i></a>
+                                <a href="" class="btn btn-success"><i class="fa fa-eye"></i></a>
+                                <a href="/dashboard/edit-product/<%= products[i].id %> " class="btn btn-info"><i
+                                        class="fa fa-pencil"></i></a>
+                            </div>
+                            <div>
+                                <p class="dash-card-date">
+                                    <%= formatDate(products[i].createdAt) %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         <% } %>
+
+        </div>
+
+        <div class="mt-4 text-center d-flex justify-content-center">
+            <div class="">
+                <%- include("../includes/pagination.ejs") %>
+            </div>
+        </div>
+    </div>
+
+    <%- include("../includes/footer.ejs") %>

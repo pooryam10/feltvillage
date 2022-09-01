@@ -1,0 +1,13 @@
+
+<% if(typeof errors != 'undefined') {%> 
+    <div class="alert alert-light" style="direction: rtl !important; padding-right: 20px; border-radius: 10px;">
+        <img src="/img/error-icon.png" width="40px" alt="">
+        <% errors.forEach(function(error) { %>
+            <div class="text-danger" role="alert">
+                <%= error.message %>
+            </div>
+        <% }) %>
+
+
+    </div>
+<% } %>
