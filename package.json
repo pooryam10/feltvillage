@@ -24,7 +24,7 @@
     "helmet": "^5.1.1",
     "jalali-moment": "^3.3.11",
     "mongoose": "^6.5.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "nodemailer": "^6.7.8",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
