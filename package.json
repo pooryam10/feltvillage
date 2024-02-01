@@ -25,7 +25,7 @@
     "jalali-moment": "^3.3.11",
     "mongoose": "^6.5.0",
     "node-fetch": "^2.6.1",
-    "nodemailer": "^6.7.8",
+    "nodemailer": "^6.9.9",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "sharp": "^0.30.7",
