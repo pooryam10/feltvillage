@@ -20,7 +20,7 @@
     "express": "^4.18.1",
     "express-fileupload": "^1.4.0",
     "express-rate-limit": "^6.5.2",
-    "express-session": "^1.17.3",
+    "express-session": "^1.18.2",
     "helmet": "^5.1.1",
     "jalali-moment": "^3.3.11",
     "mongoose": "^6.5.0",
